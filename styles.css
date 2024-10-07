@@ -1,0 +1,320 @@
+/*-------------------- CSS RESET ---------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------------- ROOT VARIABLES --------------------------------------- */
+:root {
+    --color-teal:#007d7b;
+    --color-black:#000000;
+    --color-white:#ffffff;
+}
+
+/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+html {
+    background-color: var(--color-white);
+}
+
+body {
+    font-family: 'Arial', Helvetica, sans-serif;
+    color: var(--color-black);
+    background-color: var(--color-black);
+    padding: 0 5rem;
+    width: calc(1000px - 2rem);
+    margin: 20px;
+    max-width: 485px;
+}
+
+/*--- Header styles ---*/
+header {
+    background-color: var(--color-white);
+    color: var(--color-teal);
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/*--- Navigation styles ---*/
+nav h2 {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+nav {
+    width: 50%;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 0;
+    margin: 1em 0;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: 3px solid var(--color-white);
+    padding: 10px 15px;
+    text-align: center;
+}
+
+nav a:hover {
+    color: var(--color-teal);
+}
+
+#back-to-top:hover {
+    color: var(--color-teal);
+}
+
+/*--- Main styles ---*/
+main {
+    background-color: var(--color-white);
+    padding: 1rem; 
+}
+
+#about, #gallery {
+    background-color: var(--color-white);
+}
+
+main h2 {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+}
+
+#about p, #gallery p {
+    font-size: 1.25em;
+    margin-bottom: 1rem;
+    max-width: 42ch;
+}
+
+/*--- Image styles ---*/
+.photo-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: center;
+}
+
+figure {
+    position: relative;
+    margin: 0;
+}
+
+figcaption {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.caption-top figcaption {
+    top: 20px;
+}
+
+.caption-bottom figcaption {
+    bottom: 20px;
+}
+
+.text-white figcaption {
+    color: var(--color-white);
+}
+
+.text-black figcaption {
+    color: var(--color-black);
+}
+
+/*--- Form styles ---*/
+#contact {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 2rem;
+    margin: 20px -20px -20px;
+}
+
+#contact p {
+    font-size: 1.25em;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--color-teal);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+input[type="submit"] {
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    padding: 10px 120px;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+/*--- Footer styles ---*/
+footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer p small {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+/*-------------------- MEDIA QUERY (medium) --------------------------------*/
+@media screen and (min-width: 880px) {
+    body {
+        max-width: 900px;
+        margin: 20px;
+    }
+
+    header {
+        text-align: left;
+    }
+
+    nav ul {
+        grid-template-columns: repeat(3, auto);
+        justify-content: center;
+    }
+
+    main h2 {
+        padding-bottom: 1rem;
+    }
+
+    #about p, #gallery p {
+        max-width: none;
+    }
+
+    .photo-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        justify-items: center;
+    }
+}
+
+/*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media screen and (min-width: 1300px) {
+    body {
+        max-width: 1400px;
+        margin: 20px auto;
+        width: calc(2000px - 1rem);
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 30px;
+    }
+
+    .photo-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        justify-items: center;
+    }
+}
